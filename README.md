@@ -9,7 +9,6 @@
  - MacOS
  - Windows
 
-
 ## Installation (Temporarily unavailable)
 
 ```
