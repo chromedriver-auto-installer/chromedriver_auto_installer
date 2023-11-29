@@ -1,5 +1,7 @@
 # chromedriver_auto_installer
 
+The project was created based on an abandoned project https://github.com/yeongbin-jo/python-chromedriver-autoinstaller.git
+
 ## Functionality
  - Automatically download chrome driver
  - Automatically install chrome driver
