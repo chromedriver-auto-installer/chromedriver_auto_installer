@@ -26,7 +26,6 @@ elif sys.argv[-1] == "clean":
     if os.path.isdir("chromedriver_auto_installer.egg-info"):
         shutil.rmtree("chromedriver_auto_installer.egg-info")
 
-
 setup(
     name="chromedriver-auto-installer",
     version="0.6.2",
