@@ -35,4 +35,8 @@ chromedriver_autoinstaller.install()
 
 driver = webdriver.Chrome()
 driver.get("http://www.python.org")
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 622af4d2524e3c591db16573ceca21604faa74d3
