@@ -11,6 +11,12 @@ The project was created based on an abandoned project https://github.com/yeongbi
  - MacOS
  - Windows
 
+## Development and contributin rep
+```
+https://github.com/chromedriver-auto-installer/chromedriver_auto_installer_dev.git
+```
+
+
 ## Installation (Temporarily unavailable)
 
 ```
@@ -37,8 +43,5 @@ chromedriver_autoinstaller.install()
 
 driver = webdriver.Chrome()
 driver.get("http://www.python.org")
-<<<<<<< HEAD
 ```
-=======
-```
->>>>>>> 622af4d2524e3c591db16573ceca21604faa74d3
+
