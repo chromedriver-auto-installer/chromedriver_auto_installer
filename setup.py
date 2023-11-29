@@ -36,7 +36,7 @@ setup(
     license="MIT",
     keywords="chromedriver chrome chromium selenium",
     url="https://github.com/chromedriver-auto-installer/chromedriver_auto_installer.git",
-    packages=["chromedriver_autoinstaller"],
+    packages=["chromedriver_auto_installer"],
     entry_points={
         "console_scripts": [
             "chromedriver-path=chromedriver_auto_installer.utils:print_chromedriver_path"
