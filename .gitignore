@@ -1,3 +1,4 @@
 .idea/
-/chromedriver_autoinstaller.egg-info/
+/chromedriver_auto_installer.egg-info/
 /build/
+**/__pycache__/
