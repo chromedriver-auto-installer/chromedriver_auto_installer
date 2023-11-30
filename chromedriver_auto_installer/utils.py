@@ -17,7 +17,7 @@ import zipfile
 from io import BytesIO
 import platform as pf
 
-__author__ = "Yeongbin Jo <iam.yeongbin.jo@gmail.com>"
+__author__ = "Yeongbin Jo <iam.yeongbin.jo@gmail.com>, NeoUKR <neokkv@gmail.com>"
 
 from typing import AnyStr, Optional
 
@@ -222,9 +222,25 @@ def get_matched_chromedriver_version(chrome_version, no_ssl=False):
         version_url = "googlechromelabs.github.io/chrome-for-testing/known-good-versions.json"
         version_url = "http://" + version_url if no_ssl else "https://" + version_url
         good_version_list = json.load(urllib.request.urlopen(version_url))
+        chrome_version_divided = chrome_version.split('.')
+        chrome_version_index = int(chrome_version_divided[3])+int(chrome_version_divided[2])*1000
+        nearest_chrome_version_divided = [0,0,0,0]
+        nearest_chrome_version_index = 0
         for good_version in good_version_list["versions"]:
-            if good_version["version"] == chrome_version:
-                return chrome_version
+            good_version_divided = good_version["version"].split('.')
+            if chrome_version_divided[0] == good_version_divided[0] and chrome_version_divided[1] == good_version_divided[1]:
+                good_version_index = int(good_version_divided[3]) + int(good_version_divided[2]) * 1000
+                if chrome_version_index == good_version_index:
+                    nearest_chrome_version_index = good_version_index
+                    nearest_chrome_version_divided = good_version_divided
+                    break
+                elif nearest_chrome_version_index < good_version_index:
+                    nearest_chrome_version_index = good_version_index
+                    nearest_chrome_version_divided = good_version_divided
+        if nearest_chrome_version_divided == [0,0,0,0]:
+            return
+        else:
+            return ".".join(nearest_chrome_version_divided)
     # check old versions of chrome using the old system
     else:
         version_url = "chromedriver.storage.googleapis.com"
